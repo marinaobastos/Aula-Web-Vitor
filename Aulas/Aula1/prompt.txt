@@ -1,0 +1,9 @@
+Instalação do pormpt-sync
+
+-> npm install prompt-sync
+
+Verificar a instalaçãoo:
+-> npm list prompt-sync
+
+Executar o script:
+-> node script1.js
