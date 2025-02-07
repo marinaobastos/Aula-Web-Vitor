@@ -1,0 +1,83 @@
+document.addEventListener('DOMContentLoaded', async (ev) => { 
+    await listarProdutos();
+});
+
+async function listarProdutos() {
+    try {
+        const response = await fetch('http://localhost:3000/produtos');
+        if (!response.ok) {
+            throw new Error(`Erro ao carregar produtos: ${response.statusText}`);
+        }
+        const data = await response.json();
+        data.forEach((produto) => {
+            console.log(produto);
+            adicionaProdutoTabela2(produto);
+        });
+    } catch (error) {
+        console.error('Erro ao carregar produtos:', error);
+    }
+}
+
+async function removerProduto(produto, idLinhaARemover) {
+    try {
+        const response = await fetch('http://localhost:3000/produtos/' + produto.id, {
+            method: 'DELETE'
+        });
+        if (!response.ok) {
+            throw new Error(`Erro ao excluir: ${response.statusText}`);
+        }
+        alert("Produto excluído com sucesso!");
+        document.getElementById(idLinhaARemover)?.remove();
+    } catch (error) {
+        console.error('Erro ao excluir produto:', error);
+    }
+}
+
+async function editarProduto(produto) {
+    try {
+        const formulario = document.getElementById("formEditar");
+        const campoIdProduto = document.getElementById("idProduto");
+        campoIdProduto.setAttribute("value", produto.id);
+        formulario.submit();
+    } catch (error) {
+        console.error('Erro ao buscar produto:', error);
+    }
+}
+
+function limparTabelaProdutod(tabela) {
+    tabela.querySelectorAll("tbody").forEach((corpoTabela) => {
+        corpoTabela.innerHTML = "";
+    });
+}
+
+async function adicionaProdutoTabela2(produto) {
+    document.getElementById("tabelaProdutosLista")?.querySelectorAll("tbody").forEach((corpoTabela) => {
+        var linha = document.createElement("tr");
+        linha.id = "linhaTabelaProduto" + produto.id;
+        var colunaNome = document.createElement("td");
+        colunaNome.textContent = produto.nome;
+        var colunaPreco = document.createElement("td");
+        colunaPreco.textContent = produto.preco;
+        var colunaFabricante = document.createElement("td");
+        colunaFabricante.textContent = produto.fabricante;
+        var colunaRemover = document.createElement("td");
+        var link = document.createElement("a");
+        link.addEventListener('click', (ev) => { removerProduto(produto, "linhaTabelaProduto" + produto.id); });
+        link.textContent = "Remover";
+        link.href = "#";
+        colunaRemover.appendChild(link);
+
+        var colunaEditar = document.createElement("td");
+        var linkEd = document.createElement("a");
+        linkEd.addEventListener('click', (ev) => { editarProduto(produto); });
+        linkEd.textContent = "Editar";
+        linkEd.href = "#";
+        colunaEditar.appendChild(linkEd);
+        linha.appendChild(colunaNome);
+        linha.appendChild(colunaPreco);
+        linha.appendChild(colunaFabricante);
+        linha.appendChild(colunaRemover);
+        linha.appendChild(colunaEditar);
+        corpoTabela.appendChild(linha);      
+    });   
+}

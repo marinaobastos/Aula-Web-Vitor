@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão de Produtos</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr.selected {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1>Gestão de Produtos</h1>
+    <form id="form-produto">
+        <label for="nome">Nome:</label>
+        <input id="nome" required>
+        
+        <label for="preco">Preço:</label>
+        <input type="number" id="preco" step="0.01" required>
+        
+        <label for="fabricante">Fabricante:</label>
+        <input id="fabricante" required>
+        
+        <label for="tipoUnidade">Tipo de Unidade:</label>
+        <select id="tipoUnidade" required>
+            <option value="quilo">Quilo</option>
+            <option value="litro">Litro</option>
+            <option value="unidade">Unidade</option>
+            <option value="caixa">Caixa</option>
+        </select>
+        
+        <button type="submit">Salvar</button>
+    </form>
+    
+    <input type="text" id="filtro" placeholder="Filtrar produtos...">
+    
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Preço</th>
+                <th>Fabricante</th>
+                <th>Tipo de Unidade</th>
+            </tr>
+        </thead>
+        <tbody id="tabela-produtos"></tbody>
+    </table>
+    
+    <button id="btn-alterar" disabled>Alterar</button>
+    <button id="btn-remover" disabled>Remover</button>
+    
+    <script>
+        let produtoSelecionado = null;
+
+        // Carregar produtos da API
+        async function carregarProdutos() {
+            try {
+                const resposta = await fetch('http://localhost:3000/produtos');
+                const produtos = await resposta.json();
+                const tabela = document.getElementById('tabela-produtos');
+                tabela.innerHTML = '';
+
+                produtos.forEach(produto => {
+                    const linha = document.createElement('tr');
+                    linha.innerHTML = `
+                        <td>${produto.id}</td>
+                        <td>${produto.nome}</td>
+                        <td>R$ ${produto.preco}</td>
+                        <td>${produto.fabricante}</td>
+                        <td>${produto.tipoUnidade}</td>
+                    `;
+                    linha.addEventListener('click', () => selecionarProduto(linha, produto));
+                    tabela.appendChild(linha);
+                });
+            } catch (erro) {
+                console.error('Erro ao carregar produtos:', erro);
+            }
+        }
+
+        // Selecionar produto na tabela
+        function selecionarProduto(linha, produto) {
+            document.querySelectorAll('tr').forEach(tr => tr.classList.remove('selected'));
+            linha.classList.add('selected');
+            produtoSelecionado = produto;
+            document.getElementById('btn-alterar').disabled = false;
+            document.getElementById('btn-remover').disabled = false;
+        }
+
+        // Cadastrar produto
+        async function cadastrarProduto(event) {
+            event.preventDefault();
+            const nome = document.getElementById('nome').value;
+            const preco = parseFloat(document.getElementById('preco').value);
+            const fabricante = document.getElementById('fabricante').value;
+            const tipoUnidade = document.getElementById('tipoUnidade').value;
+            
+            if (!nome || isNaN(preco) || !fabricante || !tipoUnidade) return;
+            
+            try {
+                await fetch('http://localhost:3000/produtos', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ nome, preco, fabricante, tipoUnidade: tipoUnidade })
+                });
+                carregarProdutos();
+                document.getElementById('form-produto').reset();
+            } catch (erro) {
+                console.error('Erro ao cadastrar produto:', erro);
+            }
+        }
+
+        // Alterar produto
+        async function alterarProduto() {
+            if (!produtoSelecionado) return;
+            const novoNome = prompt('Novo nome:', produtoSelecionado.nome);
+            const novoPreco = prompt('Novo preço:', produtoSelecionado.preco);
+            const novoFabricante = prompt('Novo fabricante:', produtoSelecionado.fabricante);
+            const novoTipoUnidade = prompt('Novo tipo de unidade:', produtoSelecionado.tipoUnidade);
+            if (!novoNome) return;
+            if (!novoPreco) return;
+            if (!novoFabricante) return;
+            if (!novoTipoUnidade) return;
+            try {
+                await fetch(`http://localhost:3000/produtos/${produtoSelecionado.id}`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ nome: novoNome, fabricante: novoFabricante, 
+                        preco: novoPreco, tipoUnidade: novoTipoUnidade })
+                });
+                carregarProdutos();
+            } catch (erro) {
+                console.error('Erro ao alterar produto:', erro);
+            }
+        }
+
+        // Remover produto
+        async function removerProduto() {
+            if (!produtoSelecionado) return;
+            const confirmacao = confirm(`Tem certeza que deseja remover "${produtoSelecionado.nome}"?`);
+            if (!confirmacao) return;
+            try {
+                await fetch(`http://localhost:3000/produtos/${produtoSelecionado.id}`, { method: 'DELETE' });
+                carregarProdutos();
+            } catch (erro) {
+                console.error('Erro ao remover produto:', erro);
+            }
+        }
+
+        // Filtrar produtos com base no texto
+        function filtrarProdutos() {
+            const termo = document.getElementById('filtro').value.toLowerCase();
+            // document.querySelectorAll('#tabela-produtos tr').forEach(linha => {
+            //     const texto = linha.innerText.toLowerCase();
+            //     linha.style.display = texto.includes(termo) ? '' : 'none';
+            // });
+        }
+
+        // Filtragem ao pressionar a tecla F2
+        document.addEventListener('keydown', event => {
+            if (event.key === 'F2') {
+                const termo = document.getElementById('filtro').value.toLowerCase();
+                document.querySelectorAll('#tabela-produtos tr').forEach(linha => {
+                    const texto = linha.innerText.toLowerCase();
+                    linha.style.display = texto.includes(termo) ? '' : 'none';
+                });
+            }
+        });
+
+        // Eventos
+        document.getElementById('form-produto').addEventListener('submit', cadastrarProduto);
+        document.getElementById('btn-alterar').addEventListener('click', alterarProduto);
+        document.getElementById('btn-remover').addEventListener('click', removerProduto);
+        document.getElementById('filtro').addEventListener('input', filtrarProdutos);
+
+        // Carregar produtos na página
+        document.addEventListener('DOMContentLoaded', carregarProdutos);
+    </script>
+</body>
+</html>

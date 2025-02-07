@@ -1,0 +1,2 @@
+awayt sempre deve estar dentro de um async
+

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Produtos</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <h1>Lista de Produtos</h1>
+    <form id="form-produto">
+        <label for="nome">Nome:</label>
+        <input list="nome-list" id="nome" required>
+        <datalist id="nome-list"></datalist>
+        
+        <label for="preco">Preço:</label>
+        <input list="preco-list" type="number" id="preco" step="0.01" required>
+        <datalist id="preco-list"></datalist>
+        
+        <label for="fabricante">Fabricante:</label>
+        <input list="fabricante-list" id="fabricante" required>
+        <datalist id="fabricante-list"></datalist>
+        
+        <label for="tipo-unidade">Tipo de Unidade:</label>
+        <select id="tipo-unidade" required>
+            <option value="quilo">Quilo</option>
+            <option value="litro">Litro</option>
+            <option value="unidade">Unidade</option>
+            <option value="caixa">Caixa</option>
+        </select>
+        
+        <button type="submit">Salvar</button>
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Preço</th>
+                <th>Fabricante</th>
+                <th>Tipo de Unidade</th>
+            </tr>
+        </thead>
+        <tbody id="tabela-produtos">
+            <!-- Os produtos serão inseridos aqui -->
+        </tbody>
+    </table>
+    <button id="btn-remover" disabled>Remover</button>
+
+</body>
+</html>

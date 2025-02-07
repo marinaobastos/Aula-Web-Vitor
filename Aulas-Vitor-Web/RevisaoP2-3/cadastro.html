@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <script></script>
+</head>
+
+<body>
+
+    <form id="'formCadastro">
+
+        <input type="hidden" id="idProduto" name="id">
+
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" id="nome">
+
+        <br><br>
+
+        <label for="preco">Preço:</label>
+        <input type="number" name="preco" id="preco">
+
+        <br><br>
+
+        <label for="fabricante">Fabricante:</label>
+        <input type="text" name="fabricante" id="fabricante">
+
+        <br><br>
+
+        <label for="tipoUnidade">Tipo unidade:</label>
+        <select name="tipoUnidade" id="tipoUnidade">
+            <option value=""> - Selecionar - </option>
+            <option value="unidade">Unidade</option>
+            <option value="litro">Litro</option>
+            <option value="quilo">Quilo</option>
+            <option value="caixa">Caixa</option>
+        </select>
+
+        <br><br>
+
+        <button type="submit" id="btnCadastrar">Cadastrar</button>
+
+    </form>
+    
+</body>
+
+</html>

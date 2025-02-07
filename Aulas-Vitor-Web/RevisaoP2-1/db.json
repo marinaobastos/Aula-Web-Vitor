@@ -1,0 +1,9 @@
+{
+    "pessoas": [
+      { "nome": "João", "telefone": "123456", "cidade": "Rio de Janeiro", "estado": "RJ" },
+      { "nome": "Maria", "telefone": "654321", "cidade": "São Paulo", "estado": "SP" },
+      { "nome": "Marina", "telefone": "098765", "cidade": "Rio de Janeiro", "estado": "RJ" },
+      { "nome": "Manuella", "telefone": "654321", "cidade": "São Paulo", "estado": "SP" }
+    ]
+  }
+  

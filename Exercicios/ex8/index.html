@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Produtos</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr.selected {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista de Produtos</h1>
+    <form id="form-produto">
+        <label for="nome">Nome:</label>
+        <input list="nome-list" id="nome" required>
+        <datalist id="nome-list"></datalist>
+        
+        <label for="preco">Preço:</label>
+        <input list="preco-list" type="number" id="preco" step="0.01" required>
+        <datalist id="preco-list"></datalist>
+        
+        <label for="fabricante">Fabricante:</label>
+        <input list="fabricante-list" id="fabricante" required>
+        <datalist id="fabricante-list"></datalist>
+        
+        <label for="tipo-unidade">Tipo de Unidade:</label>
+        <input list="tipo-unidade-list" id="tipo-unidade" required>
+        <datalist id="tipo-unidade-list"></datalist>
+        
+        <button type="submit">Salvar</button>
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Preço</th>
+                <th>Fabricante</th>
+                <th>Tipo de Unidade</th>
+            </tr>
+        </thead>
+        <tbody id="tabela-produtos">
+            <!-- Os produtos serão inseridos aqui -->
+        </tbody>
+    </table>
+    <button id="btn-remover" disabled>Remover</button>
+
+    <script>
+        let produtoSelecionado = null;
+        let tiposUnidade = new Set(); // Usado para armazenar tipos de unidade únicos
+
+        async function carregarProdutos() {
+            try {
+                const resposta = await fetch('http://localhost:3000/produtos'); // Substituir pela URL correta
+                const produtos = await resposta.json();
+                const tabela = document.getElementById('tabela-produtos');
+                tabela.innerHTML = '';
+                const nomeList = document.getElementById('nome-list');
+                const precoList = document.getElementById('preco-list');
+                const fabricanteList = document.getElementById('fabricante-list');
+                const tipoUnidadeList = document.getElementById('tipo-unidade-list');
+                
+                // Limpando a lista de tipos de unidade
+                tipoUnidadeList.innerHTML = '';
+
+                produtos.forEach(produto => {
+                    // Adicionando tipos de unidade ao conjunto
+                    tiposUnidade.add(produto.tipo_unidade);
+                    
+                    const linha = document.createElement('tr');
+                    linha.innerHTML = `
+                        <td>${produto.id}</td>
+                        <td>${produto.nome}</td>
+                        <td>R$ ${produto.preco.toFixed(2)}</td>
+                        <td>${produto.fabricante}</td>
+                        <td>${produto.tipo_unidade}</td>
+                    `;
+                    linha.addEventListener('click', () => selecionarLinha(linha, produto));
+                    tabela.appendChild(linha);
+                    
+                    nomeList.innerHTML += `<option value="${produto.nome}">`;
+                    precoList.innerHTML += `<option value="${produto.preco}">`;
+                    fabricanteList.innerHTML += `<option value="${produto.fabricante}">`;
+                });
+
+                // Adicionando os tipos de unidade ao datalist
+                tiposUnidade.forEach(tipo => {
+                    tipoUnidadeList.innerHTML += `<option value="${tipo}">`;
+                });
+
+            } catch (erro) {
+                console.error('Erro ao carregar produtos:', erro);
+            }
+        }
+        
+        function selecionarLinha(linha, produto) {
+            document.querySelectorAll('tr').forEach(tr => tr.classList.remove('selected'));
+            linha.classList.add('selected');
+            produtoSelecionado = produto;
+            document.getElementById('btn-remover').disabled = false;
+        }
+
+        async function removerProduto() {
+            if (!produtoSelecionado) return;
+            try {
+                await fetch(`http://localhost:3000/produtos/${produtoSelecionado.id}`, { method: 'DELETE' });
+                document.querySelector('.selected').remove();
+                produtoSelecionado = null;
+                document.getElementById('btn-remover').disabled = true;
+            } catch (erro) {
+                console.error('Erro ao remover produto:', erro);
+            }
+        }
+        
+        async function cadastrarProduto(event) {
+            event.preventDefault();
+            const nome = document.getElementById('nome').value;
+            const preco = parseFloat(document.getElementById('preco').value);
+            const fabricante = document.getElementById('fabricante').value;
+            const tipoUnidade = document.getElementById('tipo-unidade').value;
+            
+            if (!nome || isNaN(preco) || !fabricante || !tipoUnidade) return;
+            
+            try {
+                const resposta = await fetch('http://localhost:3000/produtos', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ nome, preco, fabricante, tipo_unidade: tipoUnidade })
+                });
+                if (resposta.ok) {
+                    carregarProdutos();
+                    document.getElementById('form-produto').reset();
+                }
+            } catch (erro) {
+                console.error('Erro ao cadastrar produto:', erro);
+            }
+        }
+        
+        document.getElementById('form-produto').addEventListener('submit', cadastrarProduto);
+        document.getElementById('btn-remover').addEventListener('click', removerProduto);
+        document.addEventListener('DOMContentLoaded', carregarProdutos);
+    </script>
+</body>
+</html>

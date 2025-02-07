@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remover Produto</title>
+    <script src="remover.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Remover Produto</h1>
+
+    <button onclick="window.location.href='index.html'">Cadastro</button>
+    <button onclick="window.location.href='listar.html'">Listar</button>
+    <button onclick="window.location.href='alterar.html'">Alterar</button>
+
+    <input type="text" id="filtro" placeholder="Pesquisar...">
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Preço</th>
+                <th>Fabricante</th>
+                <th>Tipo de Unidade</th>
+            </tr>
+        </thead>
+        <tbody id="tabela-produtos">
+            <!-- Os produtos serão carregados aqui -->
+        </tbody>
+    </table>
+
+    <button id="btn-remover" disabled>Remover Produto</button>
+
+</body>
+</html>

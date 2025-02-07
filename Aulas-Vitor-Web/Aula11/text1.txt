@@ -1,0 +1,41 @@
+//
+ 
+let aoPressionarTecla = function(tecla) {
+ 
+    alert(`A tecla ${String.fromCharCode(tecla.keyCode).toLowerCase()} foi pressionada.`)
+};
+ 
+/*
+ 
+tecla.keyCode → Obtém o código numérico da tecla pressionada.
+String.fromCharCode(...) → Converte esse código numérico em um caractere correspondente.
+ 
+Exemplo: Se pressionarmos a tecla "A", tecla.keyCode será 65.
+String.fromCharCode(65) retorna "A".
+ 
+toLowerCase() → Converte a letra para minúscula, garantindo que "A" vire "a"
+ 
+*/
+ 
+document.getElementById('nome').addEventListener('keyup', aoPressionarTecla);
+ 
+/*
+ 
+addEventListener(evento, função) → Adiciona um ouvinte de evento ao elemento.
+'keyup' → O evento ocorre quando o usuário solta uma tecla após pressioná-la.
+aoPressionarTecla → Nome da função que será chamada sempre que o evento ocorrer.
+ 
+Resumo: Toda vez que o usuário digitar algo no campo <input id="nome"> e soltar a tecla, a função aoPressionarTecla será executada.
+ 
+*/
+ 
+document.getElementsByTagName('form')[0].addEventListener('submit', (evento) => {
+    evento.preventDefault();
+});
+ 
+/*
+Como getElementsByTagName() retorna uma lista, usamos [0] para pegar o primeiro formulário da página.
+addEventListener('submit', ...) → Adiciona um ouvinte de evento ao <form>, detectando quando ele for enviado.
+evento.preventDefault(); → Impede o comportamento padrão do formulário, ou seja, ele não será enviado para o servidor.
+Isso é útil quando queremos validar os dados antes de permitir o envio.
+*/

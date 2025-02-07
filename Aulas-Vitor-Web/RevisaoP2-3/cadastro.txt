@@ -1,0 +1,140 @@
+window.location.search => é uma propriedade que retorna a parte da URL que vem após o símbolo ?
+
+-----------------------------------------------------------------------------------------------------------------------
+
+window.location.search != ''
+
+=> Essa condição verifica se há parâmetros de consulta na URL. Caso a URL tenha parâmetros 
+(ou seja, se search não for uma string vazia), o código prossegue para a próxima verificação.
+
+-----------------------------------------------------------------------------------------------------------------------
+
+window.location.search.includes('idProduto=')
+
+=> A função .includes('idProduto=') verifica se a URL contém o parâmetro idProduto.
+Se a URL for algo como ?idProduto=123, esta condição será verdadeira.
+
+-----------------------------------------------------------------------------------------------------------------------
+
+let idProduto = window.location.search.split('=')[1];
+
+=> Quando a URL contém idProduto=, o código pega a parte após o = (o valor associado ao parâmetro idProduto).
+O método .split('=') divide a string window.location.search usando o caractere = como delimitador. Isso cria 
+um array de duas partes:
+    A primeira parte é o nome do parâmetro (idProduto).
+    A segunda parte é o valor do parâmetro (por exemplo, 123). Id do produto
+
+-----------------------------------------------------------------------------------------------------------------------
+
+?. (Operador de encadeamento opcional):
+
+=> O operador de encadeamento opcional ?. é utilizado para garantir que o código não lance um erro 
+caso o botão com id btnCadastrar não exista na página.
+Se document.getElementById('btnCadastrar') retornar null (ou seja, o botão não existe), o método 
+addEventListener não será chamado e nenhum erro será gerado.
+Em outras palavras, o código dentro do addEventListener só será executado se o botão realmente existir.
+
+-----------------------------------------------------------------------------------------------------------------------
+
+new FormData():
+
+=> O FormData é um objeto que permite coletar os dados de um formulário HTML de maneira simples, como 
+se estivesse simulando o comportamento de um formulário.
+=> O objeto FormData cria uma coleção de pares chave-valor a partir dos dados de um formulário.
+=> A chave é o name de cada campo de entrada (input, select, textarea etc.), e o valor é o conteúdo 
+preenchido nesses campos.
+=> Exemplo: Se o formulário contiver um campo <input name="nome" value="João">, o FormData terá um 
+par de chave-valor: nome: "João".
+
+-----------------------------------------------------------------------------------------------------------------------
+
+evento.preventDefault();
+
+=> Impede o envio do formulário
+
+-----------------------------------------------------------------------------------------------------------------------
+
+form.has(campo)
+
+=> O método has() do FormData verifica se o campo com o nome especificado existe dentro do objeto FormData.
+
+-----------------------------------------------------------------------------------------------------------------------
+
+form.get(campo)
+
+=> O método get() do FormData retorna o valor do campo especificado. Se o campo não existir, ele retorna null.
+
+-----------------------------------------------------------------------------------------------------------------------
+
+?.toString()
+
+=> O operador de encadeamento opcional (?.) é usado para garantir que o código não gerará um erro 
+se form.get(campo) retornar null (quando o campo não existe).
+=> Se o campo existir, form.get(campo) retorna o valor e o método toString() é chamado sobre esse 
+valor. Caso contrário, a expressão inteira é avaliada como undefined.
+=> Exemplo: Se form.get('nome') retornar "João", form.get('nome')?.toString() se traduz 
+em "João". Se retornar null, ?. impede a chamada do toString() e retorna undefined.
+=> .trim(): o método trim() é usado para remover espaços em branco do início e do fim de uma string.
+
+-----------------------------------------------------------------------------------------------------------------------
+
+Se op == 'cadastrar'
+
+=> Quando a variável op tem o valor 'cadastrar', a expressão '' (string vazia) é retornada. Ou seja, 
+a URL será apenas 'http://localhost:3000/produtos', ou seja, sem um id no final.
+=> Esse caso provavelmente é usado quando o objetivo é cadastrar um novo produto, então não há 
+necessidade de fornecer um id.
+
+Caso contrário (quando op != 'cadastrar')
+
+=> Se op não for igual a 'cadastrar', a expressão '/produto.get('id')' é executada. Isso significa 
+que a URL será algo como 'http://localhost:3000/produtos/{id}', onde {id} será o valor do id do produto.
+=> Esse caso provavelmente é usado quando você está realizando uma operação de atualização ou 
+exclusão de um produto específico, e o id é necessário para identificar qual produto está sendo manipulado.
+
+-----------------------------------------------------------------------------------------------------------------------
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------------
+
+
+
+-----------------------------------------------------------------------------------------------------------------------
+
+
+
+-----------------------------------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
