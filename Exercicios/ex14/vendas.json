@@ -1,0 +1,34 @@
+{
+    "medicamentos": [
+      {
+        "id": 1,
+        "nome": "Paracetamol",
+        "fabricante": "MedPharma",
+        "preco": 5.99,
+        "tipo_unidade": "Unidade"
+      },
+      {
+        "id": 2,
+        "nome": "Ibuprofeno",
+        "fabricante": "SaúdeMax",
+        "preco": 8.50,
+        "tipo_unidade": "Caixa"
+      }
+    ],
+    
+    "vendas": [
+      {
+        "id": 1,
+        "data_venda": "2025-02-10",
+        "produto": "Paracetamol",
+        "vendedor": "Carlos Silva"
+      },
+      {
+        "id": 2,
+        "data_venda": "2025-02-10",
+        "produto": "Ibuprofeno",
+        "vendedor": "Ana Souza"
+      }
+    ]
+  }
+  

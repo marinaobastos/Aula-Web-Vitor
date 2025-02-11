@@ -1,0 +1,19 @@
+body { 
+    font-family: Arial, sans-serif; 
+}
+
+.container { 
+    width: 50%; 
+    margin: auto; 
+}
+
+table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    margin-top: 20px; 
+}
+
+th, td { border: 1px solid #ddd; 
+    padding: 8px; 
+    text-align: left; 
+}

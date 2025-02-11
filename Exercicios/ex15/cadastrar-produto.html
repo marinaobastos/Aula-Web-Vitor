@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Produtos</title>
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <h1>Cadastro de Produtos</h1>
+    <form id="form-produto">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" required>
+
+        <label for="fabricante">Fabricante:</label>
+        <select id="fabricante" required>
+            <option value="Fabricante A">Fabricante A</option>
+            <option value="Fabricante B">Fabricante B</option>
+            <option value="Fabricante C">Fabricante C</option>
+        </select>
+
+        <label for="preco">Preço:</label>
+        <input type="number" id="preco" step="0.01" required>
+
+        <label for="tipo_unidade">Tipo de Unidade:</label>
+        <select id="tipo_unidade" required>
+            <option value="Unidade">Unidade</option>
+            <option value="Quilo">Quilo</option>
+            <option value="Caixa">Caixa</option>
+        </select>
+
+        <button type="submit">Cadastrar</button>
+    </form>
+
+    <a href="index.html">Voltar</a>
+</body>
+</html>

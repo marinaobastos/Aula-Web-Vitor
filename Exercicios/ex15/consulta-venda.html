@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Vendas</title>
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <h1>Consulta de Vendas</h1>
+
+    <label for="produtoConsulta">Selecione o Produto:</label>
+    <select id="produtoConsulta"></select>
+
+    <button onclick="consultarVendas()">Consultar</button>
+
+    <br><br>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Data da Venda</th>
+                <th>Vendedor</th>
+                <th>Quantidade</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody id="lista_vendas"></tbody>
+    </table>
+
+    <a href="index.html">Voltar</a>
+</body>
+</html>

@@ -1,0 +1,166 @@
+{
+    "produtos" : [
+
+        {
+            "id": "01",
+            "nome": "Quadro",
+            "preco": "120,00",
+            "cor": "colorido"
+        },
+
+        {
+            "id": "02",
+            "nome": "Caneca",
+            "preco": "20,00",
+            "cor": "branca"
+        },
+
+        {
+            "id": "03",
+            "nome": "Caneta",
+            "preco": "0,99",
+            "cor": "preta"
+        },
+
+        {
+            "id": "04",
+            "nome": "Vestido",
+            "preco": "120,00",
+            "cor": "amarelo"
+        },
+
+        {
+            "id": "05",
+            "nome": "Mouse",
+            "preco": "120,00",
+            "cor": "preto"
+        },
+
+        {
+            "id": "06",
+            "nome": "MousePad",
+            "preco": "35,00",
+            "cor": "Vermelho"
+        },
+
+        {
+            "id": "07",
+            "nome": "Terço",
+            "preco": "28,00",
+            "cor": "Branco"
+        },
+
+        {
+            "id": "08",
+            "nome": "Quadro",
+            "preco": "1780,00",
+            "cor": "Colorido"
+        },
+
+        {
+            "id": "09",
+            "nome": "Massinhade modelar",
+            "preco": "10,00",
+            "cor": "5 cores"
+        },
+
+        {
+            "id": "10",
+            "nome": "Pente",
+            "preco": "12,00",
+            "cor": "Rosa"
+        },
+
+        {
+            "id": "11",
+            "nome": "Pompom",
+            "preco": "02,00",
+            "cor": "Lilás"
+        },
+
+        {
+            "id": "12",
+            "nome": "Carta",
+            "preco": "05,00",
+            "cor": "colorido"
+        },
+
+        {
+            "id": "13",
+            "nome": "Pilot",
+            "preco": "02,60",
+            "cor": "azul"
+        },
+
+        {
+            "id": "14",
+            "nome": "Caixa de som",
+            "preco": "160,00",
+            "cor": "Branca"
+        },
+
+        {
+            "id": "15",
+            "nome": "Creme de mão",
+            "preco": "50,00",
+            "cor": "branco"
+        },
+
+        {
+            "id": "16",
+            "nome": "Uno",
+            "preco": "25,00",
+            "cor": "colorido"
+        },
+
+        {
+            "id": "17",
+            "nome": "Pelúcia",
+            "preco": "160,00",
+            "cor": "Azul"
+        },
+
+        {
+            "id": "18",
+            "nome": "Vaso de planta",
+            "preco": "05,00",
+            "cor": "cinza"
+        },
+
+        {
+            "id": "19",
+            "nome": "Pulseira",
+            "preco": "50,00",
+            "cor": "Prata"
+        },
+
+        {
+            "id": "20",
+            "nome": "Santinha",
+            "preco": "120,00",
+            "cor": "Colorida"
+        },
+
+        {
+            "id": "21",
+            "nome": "Creme de rosto",
+            "preco": "20,00",
+            "cor": "branco"
+        },
+
+        {
+            "id": "22",
+            "nome": "Soro fisiológico",
+            "preco": "10,00",
+            "cor": "Transparente"
+        },
+
+        {
+            "id": "23",
+            "nome": "Chaveiro",
+            "preco": "03,00",
+            "cor": "colorido"
+        }
+
+    ]
+}

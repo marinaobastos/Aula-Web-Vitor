@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Músicas</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    
+    <div class="conteiner">
+
+        <h1>Cadastro de músicas</h1>
+
+        <form id="form_musica">
+
+            <div class="form_grupo">
+                <label for="nome">Nome:</label>
+                <input type="text" name="nome" id="nome" required> <!-- required: significa que o campo é obrigatório. -->
+            </div>
+
+            <div class="form_grupo">
+                <label for="cantor">Cantor:</label>
+                <input type="text" name="cantor" id="cantor" required>
+            </div>
+
+            <div class="form_grupo">
+                <label for="ano_lancamento">Ano de lançamento:</label>
+                <input type="text" name="ano_lancamento" id="ano_lancamento" required>
+            </div>
+
+            <div class="form_grupo">
+                <label for="ouvintes_mensais">Ouvintes mensais:</label>
+                <input type="text" name="ouvintes_mensais" id="ouvintes_mensais" required>
+            </div>
+
+            <div class="form_grupo">
+                <label for="plataforma_digital">Plataformas digitais:</label>
+                <input type="text" name="plataforma_digital" id="plataforma_digital">
+            </div>
+
+            <div class="form_grupo">
+                <label for="genero_musical">Gênero musical:</label>
+                <input type="text" name="genero_musical" id="genero_musical">
+            </div>
+
+            <div class="form_grupo">
+                <label for="duracao">Duração da música:</label>
+                <input type="text" name="duracao" id="duracao">
+            </div>
+
+            <button type="submit">Adicionar música</button>
+
+        </form>
+
+        <!-- <h2>Lista de músicas</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Cantor</th>
+                    <th>Ano de lançamento</th>
+                    <th>Ouvintes mensais</th>
+                    <th>Plataformas digitais</th>
+                    <th>Gênero musical</th>
+                    <th>Duração da música</th>
+                </tr>
+            </thead>
+
+            <tbody id="lista_musicas"></tbody> -->
+            
+    </div>
+
+</body>
+
+</html>

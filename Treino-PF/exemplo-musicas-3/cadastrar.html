@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar músicas</title>
+    <script src="cadastrar.js" defer></script>
+    <link rel="stylesheet" href="style-cadastrar.css">
+</head>
+
+<body>
+    
+    <div class="conteiner">
+
+        <h1>Cadastro de músicas</h1>
+
+        <form id="form_musica">
+
+            <div class="form_grupo">
+                <label for="nome">Nome:</label>
+                <input type="text" name="nome" id="nome" required> <!-- required: significa que o campo é obrigatório. -->
+            </div>
+
+            <div class="form_grupo">
+                <label for="cantor">Cantor:</label>
+                <input type="text" name="cantor" id="cantor" required>
+            </div>
+
+            <div class="form_grupo">
+                <label for="ano_lancamento">Ano de lançamento:</label>
+                <input type="text" name="ano_lancamento" id="ano_lancamento" required>
+            </div>
+
+            <div class="form_grupo">
+                <label for="ouvintes_mensais">Ouvintes mensais:</label>
+                <input type="text" name="ouvintes_mensais" id="ouvintes_mensais" required>
+            </div>
+
+            <div class="form_grupo">
+                <label for="plataforma_digital">Plataformas digitais:</label>
+                <input type="text" name="plataforma_digital" id="plataforma_digital">
+            </div>
+
+            <div class="form_grupo">
+                <label for="genero">Gênero musical:</label>
+                <input type="text" name="genero" id="genero">
+            </div>
+
+            <div class="form_grupo">
+                <label for="duracao">Duração da música:</label>
+                <input type="text" name="duracao" id="duracao">
+            </div>
+
+            <br>
+            
+            <button type="submit">Adicionar música</button>
+
+        </form>
+
+        <br><br>
+
+        <a href="listar.html">Ver Lista de Músicas</a>
+    
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="registro-vendas.js" defer></script>
+</head>
+
+<body>
+
+    <h1>Registro de Vendas</h1>
+
+    <label for="vendedor">Vendedor:</label>
+    <select id="vendedor">
+        <option value="Vendedor 1">Vendedor 1</option>
+        <option value="Vendedor 2">Vendedor 2</option>
+        <option value="Vendedor 3">Vendedor 3</option>
+    </select>
+    
+    <label for="filtro_nome">Filtrar por Nome:</label>
+    <input type="text" id="filtro_nome" placeholder="Digite o nome do produto">
+    
+    <label for="filtro_fabricante">Filtrar por Fabricante:</label>
+    <select id="filtro_fabricante">
+        <option value="">Todos</option>
+    </select>
+    
+    <button onclick="filtrarMedicamentos()">Buscar</button>
+
+    <br><br>
+    
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Fabricante</th>
+                <th>Preço</th>
+                <th>Quantidade</th>
+                <th>Adicionar</th>
+            </tr>
+        </thead>
+        <tbody id="lista_produtos"></tbody>
+    </table>
+
+    <h2>Produtos na Venda</h2>
+    <ul id="carrinho"></ul>
+    
+    <h2>Total da Venda: <span id="totalVenda">0.00</span></h2>
+
+    <button type="button" onclick="finalizarVenda()">Finalizar Venda</button>
+
+</body>
+</html>

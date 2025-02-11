@@ -1,0 +1,12 @@
+body { 
+    font-family: Arial, sans-serif; 
+}
+
+.container { 
+    width: 50%; 
+    margin: auto; 
+}
+
+.form-group { 
+    margin-bottom: 10px; 
+}

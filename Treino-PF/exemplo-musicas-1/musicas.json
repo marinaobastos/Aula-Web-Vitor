@@ -1,0 +1,193 @@
+{
+    "musicas": [
+      {
+        "nome": "Bohemian Rhapsody",
+        "cantor": "Queen",
+        "ano_lancamento": 1975,
+        "ouvintes_mensais": 50000000,
+        "plataforma_digital": "Spotify",
+        "genero": "Rock",
+        "duracao": "5:55"
+      },
+      {
+        "nome": "Shape of You",
+        "cantor": "Ed Sheeran",
+        "ano_lancamento": 2017,
+        "ouvintes_mensais": 80000000,
+        "plataforma_digital": "Apple Music",
+        "genero": "Pop",
+        "duracao": "3:53"
+      },
+      {
+        "nome": "Blinding Lights",
+        "cantor": "The Weeknd",
+        "ano_lancamento": 2019,
+        "ouvintes_mensais": 75000000,
+        "plataforma_digital": "Spotify",
+        "genero": "Synth-pop",
+        "duracao": "3:21"
+      },
+      {
+        "nome": "Rolling in the Deep",
+        "cantor": "Adele",
+        "ano_lancamento": 2010,
+        "ouvintes_mensais": 60000000,
+        "plataforma_digital": "Deezer",
+        "genero": "Soul",
+        "duracao": "3:48"
+      },
+      {
+        "nome": "Uptown Funk",
+        "cantor": "Mark Ronson ft. Bruno Mars",
+        "ano_lancamento": 2014,
+        "ouvintes_mensais": 70000000,
+        "plataforma_digital": "YouTube Music",
+        "genero": "Funk",
+        "duracao": "4:30"
+      },
+      {
+        "nome": "Despacito",
+        "cantor": "Luis Fonsi ft. Daddy Yankee",
+        "ano_lancamento": 2017,
+        "ouvintes_mensais": 90000000,
+        "plataforma_digital": "Spotify",
+        "genero": "Reggaeton",
+        "duracao": "3:49"
+      },
+      {
+        "nome": "Someone Like You",
+        "cantor": "Adele",
+        "ano_lancamento": 2011,
+        "ouvintes_mensais": 55000000,
+        "plataforma_digital": "Apple Music",
+        "genero": "Pop",
+        "duracao": "4:45"
+      },
+      {
+        "nome": "Smells Like Teen Spirit",
+        "cantor": "Nirvana",
+        "ano_lancamento": 1991,
+        "ouvintes_mensais": 40000000,
+        "plataforma_digital": "Spotify",
+        "genero": "Grunge",
+        "duracao": "5:01"
+      },
+      {
+        "nome": "Levitating",
+        "cantor": "Dua Lipa",
+        "ano_lancamento": 2020,
+        "ouvintes_mensais": 85000000,
+        "plataforma_digital": "Spotify",
+        "genero": "Dance-pop",
+        "duracao": "3:23"
+      },
+      {
+        "nome": "Bad Guy",
+        "cantor": "Billie Eilish",
+        "ano_lancamento": 2019,
+        "ouvintes_mensais": 78000000,
+        "plataforma_digital": "YouTube Music",
+        "genero": "Electropop",
+        "duracao": "3:24"
+      },
+      {
+        "nome": "As It Was",
+        "cantor": "Harry Styles",
+        "ano_lancamento": 2022,
+        "ouvintes_mensais": 95000000,
+        "plataforma_digital": "Spotify",
+        "genero": "Pop",
+        "duracao": "2:47"
+      },
+      {
+        "nome": "Flowers",
+        "cantor": "Miley Cyrus",
+        "ano_lancamento": 2023,
+        "ouvintes_mensais": 100000000,
+        "plataforma_digital": "Spotify",
+        "genero": "Pop",
+        "duracao": "3:20"
+      },
+      {
+        "nome": "Kill Bill",
+        "cantor": "SZA",
+        "ano_lancamento": 2022,
+        "ouvintes_mensais": 88000000,
+        "plataforma_digital": "Apple Music",
+        "genero": "R&B",
+        "duracao": "2:33"
+      },
+      {
+        "nome": "Calm Down",
+        "cantor": "Rema",
+        "ano_lancamento": 2022,
+        "ouvintes_mensais": 72000000,
+        "plataforma_digital": "Spotify",
+        "genero": "Afrobeat",
+        "duracao": "3:39"
+      },
+      {
+        "nome": "Anti-Hero",
+        "cantor": "Taylor Swift",
+        "ano_lancamento": 2022,
+        "ouvintes_mensais": 82000000,
+        "plataforma_digital": "Spotify",
+        "genero": "Pop",
+        "duracao": "3:20"
+      },
+      {
+        "nome": "Die For You",
+        "cantor": "The Weeknd",
+        "ano_lancamento": 2016,
+        "ouvintes_mensais": 65000000,
+        "plataforma_digital": "Spotify",
+        "genero": "R&B",
+        "duracao": "4:20"
+      },
+      {
+        "nome": "Starboy",
+        "cantor": "The Weeknd ft. Daft Punk",
+        "ano_lancamento": 2016,
+        "ouvintes_mensais": 70000000,
+        "plataforma_digital": "Spotify",
+        "genero": "R&B",
+        "duracao": "3:50"
+      },
+      {
+        "nome": "Can't Stop the Feeling!",
+        "cantor": "Justin Timberlake",
+        "ano_lancamento": 2016,
+        "ouvintes_mensais": 55000000,
+        "plataforma_digital": "Apple Music",
+        "genero": "Pop",
+        "duracao": "3:56"
+      },
+      {
+        "nome": "Don't Start Now",
+        "cantor": "Dua Lipa",
+        "ano_lancamento": 2019,
+        "ouvintes_mensais": 60000000,
+        "plataforma_digital": "Spotify",
+        "genero": "Dance-pop",
+        "duracao": "3:03"
+      },
+      {
+        "nome": "Señorita",
+        "cantor": "Shawn Mendes & Camila Cabello",
+        "ano_lancamento": 2019,
+        "ouvintes_mensais": 75000000,
+        "plataforma_digital": "Spotify",
+        "genero": "Pop",
+        "duracao": "3:10"
+      },
+      {
+        "nome": "Happier Than Ever",
+        "cantor": "Billie Eilish",
+        "ano_lancamento": 2021,
+        "ouvintes_mensais": 80000000,
+        "plataforma_digital": "Spotify",
+        "genero": "Pop",
+        "duracao": "5:01"
+      }
+    ]
+}
