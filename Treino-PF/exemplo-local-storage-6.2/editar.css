@@ -1,0 +1,65 @@
+/* Estilo para o botão Editar */
+.botao-editar {
+    margin-left: 10px; /* Adiciona espaço à esquerda */
+    margin-right: 10px; /* Adiciona espaço à direita */
+    padding: 4px 8px;
+    font-size: 14px;
+    background-color: #9cb6f0;
+    color: white;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 5px;
+}
+
+/* Efeito de hover no botão */
+.botao-editar:hover {
+    background-color: #97d1f3;
+}
+
+/* Estiliza o formulário */
+#div {
+    width: 300px; /* Define uma largura para o formulário */
+    margin: left; /* Centraliza o formulário horizontalmente */
+    margin-left: 10px;
+    padding: 20px; /* Espaçamento interno */
+    background-color: #f9f9f9; /* Cor de fundo do formulário */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave ao redor do formulário */
+}
+
+/* Estilo para os labels */
+label {
+    display: block; /* Faz o label ocupar uma linha inteira */
+    margin-bottom: 8px; /* Espaço abaixo do label */
+    font-weight: bold;
+}
+
+/* Estilo para os campos de entrada */
+input[type="text"], input[type="number"], select {
+    width: 100%; /* Faz os campos ocuparem toda a largura disponível */
+    padding: 8px; /* Espaço dentro dos campos */
+    margin-bottom: 15px; /* Espaço abaixo de cada campo */
+    border: 1px solid #ccc; /* Borda suave */
+    border-radius: 4px; /* Bordas arredondadas */
+    font-size: 14px; /* Tamanho da fonte */
+}
+
+/* Estilo para o botão */
+button {
+
+    padding: 10px; /* Espaço dentro do botão */
+    background-color: #89acf8; /* Cor de fundo do botão */
+    color: white; /* Cor do texto */
+    border: none; /* Remove a borda padrão */
+    border-radius: 4px; /* Bordas arredondadas */
+    font-size: 16px; /* Tamanho da fonte */
+    cursor: pointer; /* Muda o cursor para indicar que o botão é clicável */
+    transition: background-color 0.3s; /* Efeito suave para a mudança de cor ao passar o mouse */
+}
+
+/* Efeito ao passar o mouse sobre o botão */
+button:hover {
+    background-color: #45a049;
+}

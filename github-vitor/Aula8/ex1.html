@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .Ab{
+            background-color: aquamarine;
+        }
+        .bb {
+            width: 100%;
+        }
+        #div1 {
+
+        }
+        #div1 > p {
+
+        }
+    </style>
+    <script>
+        var elementos = document.querySelectorAll("#div1 > p")
+        var div2 = document.getElementById("div2");
+        //div2.innerHTML = "<p>Oi</p>";
+        var paragrafo = document.createElement("p");
+        paragrafo.innerText = "Oi";
+        div2.appendChild(paragrafo);
+    </script>
+</head>
+<body>
+    <div class="Ab bb cc" id="div1"></div>
+    <div class="dd bb jj" id="div2"></div>
+    <form>
+        <div>
+            <label for="sexo">Sexo:</label>
+            <input type="radio" name="sexo"/> Masculino &nbsp;
+            <input type="radio" name="sexo"/> Feminino &nbsp;
+            <input type="radio" name="sexo"/> Outros
+        </div>
+        
+
+    </form>
+</body>
+</html>

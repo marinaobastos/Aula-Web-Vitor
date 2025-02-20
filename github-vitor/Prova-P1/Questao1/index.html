@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Listagem de Imóveis</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f4f4f4;
+    }
+    #filters {
+      margin-bottom: 20px;
+    }
+    .filter-group {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Listagem de Imóveis</h1>
+  <div id="filters">
+    <div class="filter-group">
+      <label for="endereco">Endereço:</label>
+      <input type="text" id="endereco" placeholder="Digite o endereço">
+    </div>
+    <div class="filter-group">
+      <label for="estado">Estado:</label>
+      <select id="estado">
+        <option value="">Selecione o estado</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label for="cidade">Cidade:</label>
+      <select id="cidade" disabled>
+        <option value="">Selecione a cidade</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label for="corretor">Corretor Responsável:</label>
+      <select id="corretor">
+        <option value="">Selecione o corretor</option>
+      </select>
+    </div>
+  </div>
+  <table id="imoveis-table">
+    <thead>
+      <tr>
+        <th>Endereço</th>
+        <th>Cidade</th>
+        <th>Estado</th>
+        <th>Proprietário</th>
+        <th>Corretor Responsável</th>
+        <th>Valor do Imóvel</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+
+  <script src="imoveis.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

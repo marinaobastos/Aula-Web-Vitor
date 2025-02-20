@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    
+    <h2>Cadastro de Pessoa</h2>
+
+    <label>Nome:</label>
+    <input type="text" id="nome">
+
+    <label>Idade:</label>
+    <input type="number" id="idade">
+
+    <label>Estado:</label>
+    <select id="estado" onchange="carregarCidades()">
+        <option value="">Selecione um estado</option>
+        <option value="SP">São Paulo</option>
+        <option value="RJ">Rio de Janeiro</option>
+        <option value="MG">Minas Gerais</option>
+    </select>
+
+    <label>Cidade:</label>
+    <select id="cidade">
+        <option value="">Selecione uma cidade</option>
+    </select>
+
+    <h3>Documentos</h3>
+    <div id="documentos">
+        <div class="documento">
+            <label>CPF:</label>
+            <input type="text" placeholder="CPF" required>
+        </div>
+    </div>
+
+    <br>
+    <button onclick="adicionarDocumento()">+ Adicionar Documento</button>
+    <br><br>
+    <button onclick="cadastrarPessoa()">Cadastrar</button>
+    <br><br>
+    <button onclick="enviarParaJsonServer()">📤 Enviar para JSON Server</button>
+    <br><br>
+    <button onclick="buscarDoJsonServer()">📥 Buscar do JSON Server</button>
+
+</body>
+</html>

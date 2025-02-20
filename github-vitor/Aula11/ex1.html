@@ -1,0 +1,21 @@
+<html>
+<body>
+    <form>
+        <label>Nome:</label>
+        <input type="text" name="nome" id="nome"/>
+    </form>
+<script>
+const aoPressionarTecla = function( ev ) {
+//console.log( event.target );
+alert( `A tecla ${String.fromCharCode(ev.keyCode).toLowerCase()} foi pressionada` );
+};
+document.getElementById( 'nome' )
+.addEventListener( 'keyup', aoPressionarTecla );
+document.getElementsByTagName("form")[0].addEventListener(
+    'submit', (ev)=>{
+        ev.preventDefault();
+    }
+);
+</script>
+</body>
+</html>

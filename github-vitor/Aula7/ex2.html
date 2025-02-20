@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="cadastro">
+        <input placeholder="Nome" type="text" />
+        <input placeholder="Telefone" type="tel" id="tel" />
+        <input placeholder="E-mail" type="email" />
+        <input text="Enviar" type="submit" />
+    </form>
+
+    <script>
+        const f = document.getElementsByTagName( 'form' )[0];
+        // Sempre use for..of para iterar nos elementos
+        for ( const elemento of f ) {
+            console.log( elemento );
+        }
+        </script>
+</body>
+</html>

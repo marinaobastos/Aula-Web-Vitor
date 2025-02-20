@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        "use strict";
+        // Assumindo que uma variável global variavelErrada existe
+        variavellErrada = 17; // esta linha lança ReferenceError por conta do
+        // erro de digitação da variável    
+        console.log(variavellErrada);
+
+
+        /*if("\045" === "%") {
+            console.log("FOI");
+        }*/
+        var sum =
+           // 015 + // !!! erro de sintaxe
+            197 +
+            142;
+
+            (function () {
+                "use strict";
+
+                false.true = ""; // TypeError
+                (14).navegandoPara = "casa"; // TypeError
+                "com".voce = "distante"; // TypeError
+            })();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

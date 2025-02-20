@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Pessoa</title>
+    <script src="editar.js" defer></script>
+    <!-- <link rel="stylesheet" href="editar.css"> -->
+
+</head>
+<body>
+
+    <h1>Editar Pessoa</h1>
+    <ul id="lista-pessoas"></ul>
+    
+    <h2>Formulário de Edição</h2>
+
+    <div id="div">
+
+        <input type="hidden" id="pessoa-id">
+        <label>Nome:</label>
+        <input type="text" id="editar-nome">
+        <br>
+        <label>Idade:</label>
+        <input type="number" id="editar-idade">
+        <br>
+        <label>Estado:</label>
+        <select id="editar-estado" onchange="carregarCidadesEdicao(this.value, '')">
+            <option value="">Selecione um estado</option>
+            <option value="SP">São Paulo</option>
+            <option value="RJ">Rio de Janeiro</option>
+            <option value="MG">Minas Gerais</option>
+        </select>
+        <br>
+        <label>Cidade:</label>
+        <select id="editar-cidade">
+            <option value="">Selecione uma cidade</option>
+        </select>
+        <br>
+        <label>Documentos:</label>
+        <div id="editar-documentos"></div>
+        <br>
+        <button onclick="salvarEdicao()">Salvar Edição</button>
+        <br><br>
+        
+        <button onclick="voltarParaPaginaPrincipal()" id="voltar">Voltar</button>
+
+        <br><br>
+
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            var form = document.createElement("form");
+            form.action = "cadastro.php";
+            form.id = "formCadastro";
+            form.method = "POST";
+            var divNome = document.createElement("div");
+            divNome.className = "itemWrapper";
+            form.appendChild(divNome);
+            var labelNome = document.createElement("label");
+            labelNome.for = "nome";
+            labelNome.innerText = "Nome:";
+            divNome.appendChild(labelNome);
+            var inputNome = document.createElement("input");
+            inputNome.type="text";
+            inputNome.name="nome";
+            inputNome.id="nome";
+            inputNome.placeholder = "Informe seu nome.";
+            divNome.appendChild(inputNome);
+        });
+    </script>
+</head>
+<body>
+    <div id="main">
+    </div>
+</body>
+</html>

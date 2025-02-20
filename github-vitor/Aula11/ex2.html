@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener("DOMContentLoaded",(ev)=>{
+            var form1 = document.getElementById("form1");
+            form1.addEventListener("submit", (ev1)=>{
+                alert("Tentativa de submissão do formulário.")
+                ev1.preventDefault();
+            }, {passive: true});});
+    </script>
+</head>
+<body>
+    <form id="form1" action="teste.php">
+        <label>Nome:</label><input type="text" name="nome"/>
+        <button id="OK">OK</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,65 @@
+{
+    "modelosCarros": [
+      {
+        "marca": "Toyota",
+        "modelo": "Corolla",
+        "valor": 150000,
+        "cores_disponiveis": ["Branco", "Preto", "Prata", "Azul"]
+      },
+      {
+        "marca": "Toyota",
+        "modelo": "Yaris",
+        "valor": 120000,
+        "cores_disponiveis": ["Vermelho", "Branco", "Cinza"]
+      },
+      {
+        "marca": "Honda",
+        "modelo": "Civic",
+        "valor": 160000,
+        "cores_disponiveis": ["Vermelho", "Cinza", "Preto", "Branco"]
+      },
+      {
+        "marca": "Honda",
+        "modelo": "HR-V",
+        "valor": 140000,
+        "cores_disponiveis": ["Azul", "Preto", "Branco"]
+      },
+      {
+        "marca": "Ford",
+        "modelo": "Mustang",
+        "valor": 350000,
+        "cores_disponiveis": ["Amarelo", "Preto", "Vermelho"]
+      },
+      {
+        "marca": "Ford",
+        "modelo": "EcoSport",
+        "valor": 110000,
+        "cores_disponiveis": ["Prata", "Preto", "Branco"]
+      },
+      {
+        "marca": "Chevrolet",
+        "modelo": "Onix",
+        "valor": 90000,
+        "cores_disponiveis": ["Branco", "Prata", "Preto"]
+      },
+      {
+        "marca": "Chevrolet",
+        "modelo": "Tracker",
+        "valor": 130000,
+        "cores_disponiveis": ["Vermelho", "Cinza", "Branco"]
+      },
+      {
+        "marca": "BMW",
+        "modelo": "320i",
+        "valor": 280000,
+        "cores_disponiveis": ["Azul", "Cinza", "Branco", "Preto"]
+      },
+      {
+        "marca": "BMW",
+        "modelo": "X1",
+        "valor": 250000,
+        "cores_disponiveis": ["Preto", "Branco", "Cinza"]
+      }
+    ],
+    "vendas":[]
+  }

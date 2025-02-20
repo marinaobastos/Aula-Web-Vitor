@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listar</title>
+    <script src="teste-listar.js" defer></script>
+    <link rel="stylesheet" href="teste-listar.css">
+</head>
+<body>
+    
+    <!-- <h3>Listagem de Pessoas</h3>
+    <br><br>
+
+    <input type="text" id="buscar-nome" placeholder="Digite o nome para buscar" oninput="buscarPessoa()">
+    <div id="lista-pessoas"></div>
+    <div id="detalhes-pessoa"></div> -->
+
+    <h1>Listagem de Pessoas</h1>
+    <br>
+    <label for="">Atualizar lista de pessoas:</label>
+    <button onclick="buscarDoJsonServer()">Atualizar Lista</button>
+    <br><br><br>
+
+    <div>
+        <label for="buscar-nome">Buscar pessoa:</label>
+        <input type="text" id="buscar-nome" placeholder="Digite o nome para buscar" oninput="buscarPessoa()">
+        <button onclick="buscarPessoa()">Buscar</button>
+    </div>
+
+    <br>
+
+    <div>
+        <label for="buscar-idade">Buscar pessoa por idade:</label>
+        <input type="number" id="buscar-idade" placeholder="Digite a idade" oninput="buscarPessoaPorIdade()">
+        <button onclick="buscarPessoaPorIdade()">Buscar por Idade</button>
+    </div>
+
+    <br>
+
+    <div>
+        <label for="buscar-estado">Buscar pessoa por estado:</label>
+        <input type="text" id="buscar-estado" placeholder="Digite o estado" oninput="buscarPessoaPorEstado()">
+        <button onclick="buscarPessoaPorEstado()">Buscar por Estado</button>
+    </div>
+
+    <br>
+
+    <div>
+        <label for="buscar-cidade">Buscar pessoa por cidade:</label>
+        <input type="text" id="buscar-cidade" placeholder="Digite a cidade" oninput="buscarPessoaPorCidade()">
+        <button onclick="buscarPessoaPorCidade()">Buscar por Cidade</button>
+    </div>
+
+    <br><br>
+
+    <h2>Detalhes da Pessoa</h2>
+
+    <div id="lista-pessoas"></div>
+    <div id="detalhes-pessoa"></div>
+    
+    <button onclick="voltarParaPaginaPrincipal()">Voltar</button>
+
+</body>
+</html>

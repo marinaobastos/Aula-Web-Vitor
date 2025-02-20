@@ -1,0 +1,55 @@
+/* Resetando estilos padrões */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo geral da página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 30px;
+    display: flex;
+    justify-content: left; /* Centraliza o conteúdo horizontalmente */
+}
+
+/* Estilo do contêiner do menu */
+nav {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombras sutis ao redor do menu */
+    width: 400px; /* Definindo uma largura fixa para os botões */
+}
+
+/* Estilo da lista de links */
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Estilo dos itens da lista */
+nav ul li {
+    margin-bottom: 10px; /* Espaçamento entre os links */
+}
+
+/* Estilo dos links que parecem botões */
+nav ul li a {
+    display: block;
+    text-decoration: none;
+    background-color: #10a2b6;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+/* Efeito de hover nos botões */
+nav ul li a:hover {
+    background-color: #8467c5;
+}

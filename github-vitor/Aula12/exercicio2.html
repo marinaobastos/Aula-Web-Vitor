@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script type ="module" >
+        "use strict";
+        var v = "Oi! Eu sou um script strict mode!";
+        function strict() {
+            // Sintaxe strict mode a nível de função
+            "use strict";
+            function nested() {
+                return "E eu também!";
+            }
+            return "Oi! Eu sou uma função strict mode!  " + nested();
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

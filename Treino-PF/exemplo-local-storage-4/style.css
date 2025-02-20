@@ -1,0 +1,19 @@
+body { 
+    font-family: Arial, sans-serif; 
+    padding: 20px; 
+}
+
+input, select, button { 
+    margin: 5px; 
+    display: block; 
+}
+
+.documento { 
+    display: flex; 
+    align-items: center; 
+    margin-bottom: 5px; 
+}
+
+.documento input { 
+    margin-right: 10px; 
+}
